@@ -92,6 +92,11 @@ function requireAuth(req, res, next) {
 
 // Routes
 
+// Root route - serve login page
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'login.html'));
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
     res.json({ status: 'OK', message: 'Proto Backend is running' });
